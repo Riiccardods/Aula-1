@@ -8,11 +8,14 @@ namespace aula1
         {
 
 
-            bool continuar = false;
+            bool continuar = true;
+            int contador = 0;
 
             if (continuar == true) 
             {
                 Console.WriteLine("o valor e Verdadeiro");
+                contador =+2;
+                Console.WriteLine(contador);
             }
 
             else 
