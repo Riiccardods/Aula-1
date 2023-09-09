@@ -7,11 +7,8 @@ namespace aula1
         static void Main(string[] args)
         {
 
-             
-
 
             bool continuar = true;
-
 
             while (continuar)
             {
@@ -27,7 +24,6 @@ namespace aula1
                 Console.WriteLine($"O numero Aleatório é: {numeroAlea}");
                 Console.WriteLine();
                 Console.WriteLine();
-
 
 
 
