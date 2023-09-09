@@ -10,7 +10,7 @@ namespace aula1
 
             bool continuar = false;
 
-            if(continuar == true) 
+            if (continuar == true) 
             {
                 Console.WriteLine("o valor e Verdadeiro");
             }
@@ -18,10 +18,11 @@ namespace aula1
             else 
             {
                 Console.WriteLine("Falso");
+                continuar = true;
             
             }
 
-           
+            Console.WriteLine($"agora mudou é: {continuar} ");
 
 
 
