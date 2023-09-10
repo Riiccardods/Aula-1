@@ -17,7 +17,7 @@ namespace aula1
 
             else
             {
-                Console.WriteLine("O numero nao é nehnum");
+                Console.WriteLine("O numero nao é nehnum encotrado");
             }
 
             Console.ReadLine();
