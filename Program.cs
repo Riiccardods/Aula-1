@@ -7,7 +7,8 @@ namespace aula1
         static void Main(string[] args)
         {
 
-
+            Console.WriteLine("ola mundo");
+            Console.ReadLine();
 
 
 
