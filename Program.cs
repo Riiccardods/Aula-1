@@ -12,7 +12,6 @@ namespace aula1
             Console.ReadLine();
 
 
-
         }
 
 
