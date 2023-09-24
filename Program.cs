@@ -8,7 +8,6 @@ namespace aula1
         {
 
 
-
             Console.WriteLine("ola mundo");
 
             Console.ReadLine();
