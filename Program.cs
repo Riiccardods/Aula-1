@@ -1,21 +1,25 @@
-﻿using System;
+﻿
+Random random = new Random();
+int numero = random.Next(0, 11);
 
-namespace aula1
+int usuario = 0;
+
+Console.WriteLine($"Ola digite um numero de 0 a 100");
+usuario = int.Parse(Console.ReadLine());
+
+if (usuario == numero)
 {
-    internal class Program
-    {
-        static void Main(string[] args)
-        {
+    Console.WriteLine("acertou");
+}
+else
+{
+    Console.WriteLine($"Errou  tente novamente, o numero era {numero}");
+
+}
 
 
-            Console.WriteLine("ola mundo");
 
-            Console.ReadLine();
-
-
-        }
-
-
+Console.ReadLine();
 
 
 
