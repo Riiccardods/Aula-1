@@ -20,6 +20,7 @@ if (int.TryParse(Console.ReadLine(), out usuario))
         Console.WriteLine($"O número é menor {numero}");
     }
 }
+
 else
 {
 
