@@ -2,34 +2,30 @@
 Random random = new Random();
 int numero = random.Next(0, 11);
 
-int usuario = 0;
-
-Console.WriteLine($"Ola digite um numero de 0 a 100");
-usuario = int.Parse(Console.ReadLine());
-
-if (usuario == numero)
+int usuario;
+Console.WriteLine("digite um numero");
+if (int.TryParse(Console.ReadLine(), out usuario))
 {
-    Console.WriteLine("acertou");
+
+    if (numero == usuario)
+    {
+        Console.WriteLine("Acertou");
+    }
+    else if (numero > usuario)
+    {
+        Console.WriteLine($"O número é maior. {numero}");
+    }
+    else
+    {
+        Console.WriteLine($"O número é menor {numero}");
+    }
 }
 else
 {
-    Console.WriteLine($"Errou  tente novamente, o numero era {numero}");
 
+    Console.WriteLine("Entrada inválida. Por favor, insira um número inteiro válido.");
 }
-
-
 Console.ReadLine();
 
 
 
-
-
-
-
-
-
-
-
-
-    }
-}
