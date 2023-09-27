@@ -7,7 +7,6 @@ Console.WriteLine("digite um numero");
 if (int.TryParse(Console.ReadLine(), out usuario))
 {
 
-
     if (numero == usuario)
     {
         Console.WriteLine("Acertou");
