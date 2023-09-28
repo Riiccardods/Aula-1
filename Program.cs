@@ -7,6 +7,8 @@ Console.WriteLine("digite um numero");
 if (int.TryParse(Console.ReadLine(), out usuario))
 {
 
+
+
     if (numero == usuario)
     {
         Console.WriteLine("Acertou");
@@ -20,6 +22,8 @@ if (int.TryParse(Console.ReadLine(), out usuario))
         Console.WriteLine($"O número é menor {numero}");
     }
 }
+
+
 
 else
 {
