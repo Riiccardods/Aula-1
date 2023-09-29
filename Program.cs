@@ -67,4 +67,6 @@ namespace JogoAdivinhacao
             Console.WriteLine("O jogo acabou. Obrigado por jogar!");
         }
     }
+
+
 }
