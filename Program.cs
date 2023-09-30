@@ -31,8 +31,6 @@ namespace JogoAdivinhacao
 
         }
 
-
-
         static void Main()
         {
             int[] tentativas = new int[10]; // Vamos limitar o jogo a 10 tentativas
