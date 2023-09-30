@@ -2,6 +2,7 @@
 
 namespace JogoAdivinhacao
 {
+
     class Program
     {
         static int GerarNumeroAleatorio()
