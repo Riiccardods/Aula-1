@@ -27,6 +27,8 @@ namespace JogoAdivinhacao
                 Console.WriteLine($"Parabéns! Você adivinhou o número {numeroAleatorio}.");
                 return true;
             }
+
+
         }
 
 
