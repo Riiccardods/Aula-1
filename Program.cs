@@ -37,7 +37,7 @@ namespace JogoAdivinhacao
             int numeroAleatorio = GerarNumeroAleatorio();
             int tentativasFeitas = 0;
 
-            Console.WriteLine("Bem-vindo ao jogo de adivinhação!");
+            Console.WriteLine("Bem-vindo jogo de adivinhação!");
             Console.WriteLine("Tente adivinhar o número entre 1 e 100.");
 
             while (tentativasFeitas < tentativas.Length)
