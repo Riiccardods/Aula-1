@@ -23,7 +23,7 @@ class Program
         // Removendo um elemento da lista..
         numeros.Remove(20);
 
-        // Imprimindo a lista após a remoção
+        // Imprimindo a lista após a remoção..
         Console.WriteLine("\nElementos na Lista após Remoção:");
         foreach (int numero in numeros)
         {
