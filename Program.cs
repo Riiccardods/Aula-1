@@ -13,7 +13,7 @@ class Program
         numeros.Add(20);
         numeros.Add(30);
 
-        // Iterando sobre a lista e imprimindo os elementos
+        // Iterando sobre a lista e imprimindo os elementos..
         Console.WriteLine("Elementos na Lista:");
         foreach (int numero in numeros)
         {
