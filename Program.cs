@@ -5,7 +5,7 @@ class Program
 {
     static void Main()
     {
-        // Criando uma lista de números inteiros.....
+        // Criando uma lista de números inteiros..
         List<int> numeros = new List<int>();
 
         // Adicionando elementos à lista
