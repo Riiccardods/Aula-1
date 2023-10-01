@@ -20,7 +20,7 @@ class Program
             Console.WriteLine(numero);
         }
 
-        // Removendo um elemento da lista
+        // Removendo um elemento da lista..
         numeros.Remove(20);
 
         // Imprimindo a lista após a remoção
