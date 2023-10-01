@@ -1,73 +1,33 @@
 ﻿using System;
+using System.Collections.Generic;
 
-namespace JogoAdivinhacao
+class Program
 {
-
-    class Program
+    static void Main()
     {
-        static int GerarNumeroAleatorio()
+        // Criando uma lista de números inteiros
+        List<int> numeros = new List<int>();
+
+        // Adicionando elementos à lista
+        numeros.Add(10);
+        numeros.Add(20);
+        numeros.Add(30);
+
+        // Iterando sobre a lista e imprimindo os elementos
+        Console.WriteLine("Elementos na Lista:");
+        foreach (int numero in numeros)
         {
-            Random random = new Random();
-            return random.Next(1, 101); // Gere um número aleatório entre 1 e 100
+            Console.WriteLine(numero);
         }
 
-        static bool VerificarPalpite(int palpite, int numeroAleatorio)
+        // Removendo um elemento da lista
+        numeros.Remove(20);
+
+        // Imprimindo a lista após a remoção
+        Console.WriteLine("\nElementos na Lista após Remoção:");
+        foreach (int numero in numeros)
         {
-            if (palpite < numeroAleatorio)
-            {
-                Console.WriteLine("Tente um número maior.");
-                return false;
-            }
-            else if (palpite > numeroAleatorio)
-            {
-                Console.WriteLine("Tente um número menor.");
-                return false;
-            }
-            else
-            {
-                Console.WriteLine($"Parabéns! Você adivinhou o número {numeroAleatorio}.");
-                return true;
-            }
-
-
-        }
-
-        static void Main()
-        {
-            int[] tentativas = new int[10]; // Vamos limitar o jogo a 10 tentativas
-            int numeroAleatorio = GerarNumeroAleatorio();
-            int tentativasFeitas = 0;
-
-            Console.WriteLine("Bem-vindo ao jogo de adivinhação!");
-            Console.WriteLine("Tente adivinhar o número entre 1 e 100.");
-
-            while (tentativasFeitas < tentativas.Length)
-            {
-                Console.Write("Digite sua suposição: ");
-                if (int.TryParse(Console.ReadLine(), out int palpite))
-                {
-                    tentativas[tentativasFeitas] = palpite;
-                    tentativasFeitas++;
-
-                    if (VerificarPalpite(palpite, numeroAleatorio))
-                    {
-                        break; // O jogo termina se o usuário acertar
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("Por favor, insira um número válido.");
-                }
-            }
-
-            if (tentativasFeitas == tentativas.Length)
-            {
-                Console.WriteLine($"Você excedeu o número máximo de tentativas. O número era {numeroAleatorio}.");
-            }
-
-            Console.WriteLine("O jogo acabou. Obrigado por jogar!");
+            Console.WriteLine(numero);
         }
     }
-
-
 }
