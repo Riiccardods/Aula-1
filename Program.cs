@@ -4,14 +4,15 @@ class Program
 {
     static void Main()
     {
-        // Array de strings
-        string[] palavras = { "Olá", "mundo", "isso", "é", "um", "exemplo" };
+        // Vamos usar um loop for para imprimir um nome 10 vezes
 
-        // Usando foreach para percorrer o array
-        foreach (string palavra in palavras)
+        // A estrutura básica do for é: for (inicialização; condição; expressão de iteração)
+        for (int i = 0; i < 10; i++)
         {
-            // Imprimindo cada palavra
-            Console.WriteLine(palavra);
+            Console.WriteLine("SeuNomeAqui");
         }
+
+        // Aguardar o usuário pressionar Enter antes de fechar o console
+        Console.ReadLine();
     }
 }
