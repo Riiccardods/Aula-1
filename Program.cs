@@ -1,86 +1,28 @@
 ﻿using System;
-
-class Bicicleta
-{
-    public string Modelo { get; set; }
-    public int QuantidadeEmEstoque { get; set; }
-    public double PrecoUnitario { get; set; }
-
-    public Bicicleta(string modelo, int quantidade, double preco)
-    {
-        Modelo = modelo;
-        QuantidadeEmEstoque = quantidade;
-        PrecoUnitario = preco;
-    }
-
-    public override string ToString()
-    {
-        return $"{Modelo} - Estoque: {QuantidadeEmEstoque} - Preço: {PrecoUnitario:C}";
-    }
-}
-
-class EstoqueBicicletaria
-{
-    private Bicicleta[] inventario;
-
-    public EstoqueBicicletaria(int capacidade)
-    {
-        inventario = new Bicicleta[capacidade];
-    }
-
-    public void AdicionarBicicleta(Bicicleta bicicleta, int quantidade)
-    {
-        int indice = EncontrarIndiceBicicleta(bicicleta);
-
-        if (indice == -1)
-        {
-            Console.WriteLine("Bicicleta não encontrada no estoque.");
-            return;
-        }
-
-        inventario[indice].QuantidadeEmEstoque += quantidade;
-        Console.WriteLine($"{quantidade} unidades de {bicicleta.Modelo} adicionadas ao estoque.");
-    }
-
-    public void MostrarInventario()
-    {
-        Console.WriteLine("Inventário da Bicicletaria:");
-        foreach (var bicicleta in inventario)
-        {
-            if (bicicleta != null)
-                Console.WriteLine(bicicleta);
-        }
-    }
-
-    private int EncontrarIndiceBicicleta(Bicicleta bicicleta)
-    {
-        for (int i = 0; i < inventario.Length; i++)
-        {
-            if (inventario[i] != null && inventario[i].Modelo == bicicleta.Modelo)
-            {
-                return i;
-            }
-        }
-        return -1;
-    }
-}
+using System.Collections.Generic;
+using aula1;
 
 class Program
 {
     static void Main()
     {
-   
+        // Criar alguns livros
+        Livro livro1 = new Livro("Aprendendo C# OOP", "Autor 1");
+        Livro livro2 = new Livro("POO em Prática", "Autor 2");
 
-        Bicicleta bike1 = new Bicicleta("Mountain Bike", 10, 799.99);
-        Bicicleta bike2 = new Bicicleta("Cidade", 15, 499.99);
+        // Criar alguns usuários
+        Usuario usuario1 = new Usuario("João");
+        Usuario usuario2 = new Usuario("Maria");
 
- 
-        EstoqueBicicletaria estoque = new EstoqueBicicletaria(10);
+        // Exemplo de Uso
+        usuario1.EmprestarLivro(livro1);
+        usuario2.EmprestarLivro(livro1);  // Tentando emprestar o mesmo livro
 
-        estoque.AdicionarBicicleta(bike1, 5);
-        estoque.AdicionarBicicleta(bike2, 10);
+        usuario2.EmprestarLivro(livro2);
+        usuario1.DevolverLivro(livro1);
 
-      
-        estoque.MostrarInventario();
+        // Mostrar status dos livros
+        Console.WriteLine($"Status do Livro 1: Emprestado - {livro1.EstaEmprestado}");
+        Console.WriteLine($"Status do Livro 2: Emprestado - {livro2.EstaEmprestado}");
     }
 }
