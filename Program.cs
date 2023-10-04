@@ -1,29 +1,67 @@
 ﻿using System;
 
-
-
-
-class Carro
+class Bicicleta
 {
-    // Atributos (propriedades)
-    public string Marca { get; set; }
     public string Modelo { get; set; }
-    public int Ano { get; set; }
+    public int QuantidadeEmEstoque { get; set; }
+    public double PrecoUnitario { get; set; }
 
-    // Método construtor
-    public Carro(string marca, string modelo, int ano)
+    public Bicicleta(string modelo, int quantidade, double preco)
     {
-        Marca = marca;
         Modelo = modelo;
-        Ano = ano;
+        QuantidadeEmEstoque = quantidade;
+        PrecoUnitario = preco;
     }
 
-    // Método para exibir informações do carro
-    public void ExibirInformacoes()
+    public override string ToString()
     {
-        Console.WriteLine($"Marca: {Marca}");
-        Console.WriteLine($"Modelo: {Modelo}");
-        Console.WriteLine($"Ano: {Ano}");
+        return $"{Modelo} - Estoque: {QuantidadeEmEstoque} - Preço: {PrecoUnitario:C}";
+    }
+}
+
+class EstoqueBicicletaria
+{
+    private Bicicleta[] inventario;
+
+    public EstoqueBicicletaria(int capacidade)
+    {
+        inventario = new Bicicleta[capacidade];
+    }
+
+    public void AdicionarBicicleta(Bicicleta bicicleta, int quantidade)
+    {
+        int indice = EncontrarIndiceBicicleta(bicicleta);
+
+        if (indice == -1)
+        {
+            Console.WriteLine("Bicicleta não encontrada no estoque.");
+            return;
+        }
+
+        inventario[indice].QuantidadeEmEstoque += quantidade;
+        Console.WriteLine($"{quantidade} unidades de {bicicleta.Modelo} adicionadas ao estoque.");
+    }
+
+    public void MostrarInventario()
+    {
+        Console.WriteLine("Inventário da Bicicletaria:");
+        foreach (var bicicleta in inventario)
+        {
+            if (bicicleta != null)
+                Console.WriteLine(bicicleta);
+        }
+    }
+
+    private int EncontrarIndiceBicicleta(Bicicleta bicicleta)
+    {
+        for (int i = 0; i < inventario.Length; i++)
+        {
+            if (inventario[i] != null && inventario[i].Modelo == bicicleta.Modelo)
+            {
+                return i;
+            }
+        }
+        return -1;
     }
 }
 
@@ -31,13 +69,18 @@ class Program
 {
     static void Main()
     {
-        // Criando uma instância da classe Carro
-        Carro meuCarro = new Carro("Toyota", "Corolla", 2020);
+   
 
-        // Chamando o método para exibir informações do carro
-        meuCarro.ExibirInformacoes();
+        Bicicleta bike1 = new Bicicleta("Mountain Bike", 10, 799.99);
+        Bicicleta bike2 = new Bicicleta("Cidade", 15, 499.99);
 
-        // Aguardando o usuário pressionar Enter antes de fechar o console
-        Console.ReadLine();
+ 
+        EstoqueBicicletaria estoque = new EstoqueBicicletaria(10);
+
+        estoque.AdicionarBicicleta(bike1, 5);
+        estoque.AdicionarBicicleta(bike2, 10);
+
+      
+        estoque.MostrarInventario();
     }
 }
