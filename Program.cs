@@ -6,17 +6,17 @@ class Program
 {
     static void Main()
     {
-        // Criar alguns livros
+        // Criar alguns livros.
         Livro livro1 = new Livro("Aprendendo C# OOP", "Autor 1");
         Livro livro2 = new Livro("POO em Prática", "Autor 2");
 
-        // Criar alguns usuários
+        // Criar alguns usuários.
         Usuario usuario1 = new Usuario("João");
         Usuario usuario2 = new Usuario("Maria");
 
         // Exemplo de Uso
         usuario1.EmprestarLivro(livro1);
-        usuario2.EmprestarLivro(livro1);  // Tentando emprestar o mesmo livro
+        usuario2.EmprestarLivro(livro1);  // Tentando emprestar o mesmo livro.
 
         usuario2.EmprestarLivro(livro2);
         usuario1.DevolverLivro(livro1);
