@@ -22,7 +22,7 @@ class Program
         usuario1.DevolverLivro(livro1);
 
         // Mostrar status dos livros
-        Console.WriteLine($"Status do Livro 1: Emprestado - {livro1.EstaEmprestado}");
+        Console.WriteLine($"Status do Livro 1: Emprestad - {livro1.EstaEmprestado}");
         Console.WriteLine($"Status do Livro 2: Emprestado - {livro2.EstaEmprestado}");
     }
 }
