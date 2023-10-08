@@ -7,8 +7,8 @@ class Program
     static void Main()
     {
         // Criar alguns livros.
-        Livro livro1 = new Livro("Aprendendo C# OOP", "Autor 1");
-        Livro livro2 = new Livro("POO em Prática", "Autor 2");
+        Livro livro1 = new Livro("Aprendend C# OOP", "Autor 1");
+        Livro livro2 = new Livro("POO em Prátic", "Autor 2");
 
         // Criar alguns usuários.
         Usuario usuario1 = new Usuario("João");
