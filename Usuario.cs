@@ -16,8 +16,13 @@ namespace aula1
         }
 
         public void EmprestarLivro(Livro livro)
+
+
         {
+
             livro.EmprestarLivro();
+
+
         }
 
         public void DevolverLivro(Livro livro)
