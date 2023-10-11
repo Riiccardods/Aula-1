@@ -7,7 +7,11 @@ class Program
     {
         List<string> listaDeCompras = new List<string>();
 
+
+
+
         while (true)
+
         {
             Console.WriteLine("=== Lista de Compras ===");
             ExibirListaDeCompras(listaDeCompras);
@@ -20,6 +24,11 @@ class Program
 
             Console.Write("Escolha uma opção: ");
             string escolha = Console.ReadLine();
+
+
+
+
+
 
             switch (escolha)
             {
@@ -52,6 +61,7 @@ class Program
         }
     }
 
+
     static void ExibirListaDeCompras(List<string> lista)
     {
         if (lista.Count == 0)
@@ -66,6 +76,7 @@ class Program
             }
         }
     }
+
 
     static void AdicionarItem(List<string> lista, string item)
     {
