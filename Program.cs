@@ -73,6 +73,9 @@ class Program
         Console.WriteLine($"{item} adicionado à lista.");
     }
 
+
+
+
     static void RemoverItem(List<string> lista, string item)
     {
         if (lista.Contains(item))
@@ -85,6 +88,8 @@ class Program
             Console.WriteLine($"{item} não encontrado na lista.");
         }
     }
+
+
 
     static void LimparLista(List<string> lista)
     {
