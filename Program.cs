@@ -80,8 +80,6 @@ class Program
     }
 
 
-
-
     static void RemoverItem(List<string> lista, string item)
     {
         if (lista.Contains(item))
