@@ -48,7 +48,7 @@ class Program
                     break;
             }
 
-            Console.Clear(); // Limpa o console para exibir o menu novamente
+            Console.Clear();
         }
     }
 
