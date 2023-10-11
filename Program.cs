@@ -8,8 +8,6 @@ class Program
         List<string> listaDeCompras = new List<string>();
 
 
-
-
         while (true)
 
         {
