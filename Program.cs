@@ -25,9 +25,6 @@ class Program
 
 
 
-
-
-
             switch (escolha)
             {
                 case "1":
