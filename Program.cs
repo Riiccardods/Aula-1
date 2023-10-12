@@ -9,7 +9,6 @@ class Program
     }
 
 
-
     static void soma(int n1, int n2) 
     {
         int resultado = n1 + n2;
