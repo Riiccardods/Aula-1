@@ -15,5 +15,4 @@ class Program
         Console.WriteLine($"a soma de {n1} + {n2} é: {resultado}");
     }  
 
-
 }
