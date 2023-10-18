@@ -10,6 +10,7 @@ class Program
     {
 
         Console.WriteLine("hola mundo");
+        Console.WriteLine();
 
 
     }
