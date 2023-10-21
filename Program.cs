@@ -1,5 +1,106 @@
 ﻿using System;
 
+class JogoAdivinhacao
+{
+    private int numeroAleatorio;
+    private int[] palpites;
+    private int tentativas;
+    private bool acertou;
+
+    public JogoAdivinhacao()
+    {
+        palpites = new int[100];
+        acertou = false;
+    }
+
+    public void IniciarJogo()
+    {
+        Console.Clear();
+        Console.WriteLine("Vou gerar um número aleatório entre 1 e 100. Tente adivinhar!");
+
+        Random random = new Random();
+        numeroAleatorio = random.Next(1, 101);
+
+        do
+        {
+            ObterPalpite();
+
+            if (palpites[tentativas] == numeroAleatorio)
+            {
+                acertou = true;
+                Console.WriteLine($"Parabéns! Você acertou em {tentativas + 1} tentativas.");
+            }
+            else
+            {
+                Console.WriteLine("Palpite errado. Tente novamente.");
+
+                // Adicione dicas aqui, por exemplo:
+                if (palpites[tentativas] < numeroAleatorio)
+                    Console.WriteLine("Tente um número maior.");
+                else
+                    Console.WriteLine("Tente um número menor.");
+
+                tentativas++;
+            }
+
+        } while (!acertou);
+
+        MostrarPalpites();
+        PerguntarSeQuerJogarNovamente();
+    }
+
+    private void ObterPalpite()
+    {
+        try
+        {
+            Console.Write("Digite seu palpite: ");
+            string palpiteStr = Console.ReadLine();
+
+            int palpite = int.Parse(palpiteStr);
+            palpites[tentativas] = palpite; // Armazenar palpite no array
+        }
+        catch (FormatException)
+        {
+            Console.WriteLine("Entrada inválida. Digite um número válido.");
+        }
+    }
+
+    private void MostrarPalpites()
+    {
+        Console.WriteLine("Seus palpites:");
+
+        for (int i = 0; i <= tentativas; i++)
+        {
+            Console.Write($"{palpites[i]} ");
+        }
+        Console.WriteLine();
+    }
+
+    private void PerguntarSeQuerJogarNovamente()
+    {
+        Console.Write("Deseja jogar novamente? (S/N): ");
+        string jogarNovamenteStr = Console.ReadLine();
+
+        if (jogarNovamenteStr.ToUpper() == "N")
+        {
+            Console.WriteLine("Obrigado por jogar!");
+            Environment.Exit(0);
+        }
+    }
+}
+
+class Menu
+{
+    public static void MostrarMenu()
+    {
+        Console.Clear();
+        Console.WriteLine("Bem-vindo ao Jogo Adivinhação!");
+        Console.WriteLine("1. Jogar");
+        Console.WriteLine("2. Sair");
+        Console.Write("Escolha uma opção: ");
+    }
+}
+
 class Program
 {
     static void Main()
@@ -8,18 +109,15 @@ class Program
 
         while (jogarNovamente)
         {
-            Console.Clear();
-            Console.WriteLine("Bem-vindo ao Jogo Adivinhação!");
-            Console.WriteLine("1. Jogar");
-            Console.WriteLine("2. Sair");
-            Console.Write("Escolha uma opção: ");
+            Menu.MostrarMenu();
 
             string escolha = Console.ReadLine();
 
             switch (escolha)
             {
                 case "1":
-                    JogoAdivinhacao();
+                    JogoAdivinhacao jogo = new JogoAdivinhacao();
+                    jogo.IniciarJogo();
                     break;
                 case "2":
                     jogarNovamente = false;
@@ -31,69 +129,5 @@ class Program
         }
 
         Console.WriteLine("Obrigado por jogar!");
-    }
-
-    static void JogoAdivinhacao()
-    {
-        Console.Clear();
-        Console.WriteLine("Vou gerar um número aleatório entre 1 e 100. Tente adivinhar!");
-
-        Random random = new Random();
-        int numeroAleatorio = random.Next(1, 101);
-
-        int tentativas = 0;
-        bool acertou = false;
-        int[] palpites = new int[100]; // Array para armazenar palpites
-
-        do
-        {
-            try
-            {
-                Console.Write("Digite seu palpite: ");
-                string palpiteStr = Console.ReadLine();
-
-                int palpite = int.Parse(palpiteStr);
-                palpites[tentativas] = palpite; // Armazenar palpite no array
-
-                tentativas++;
-
-                if (palpite == numeroAleatorio)
-                {
-                    acertou = true;
-                    Console.WriteLine($"Parabéns! Você acertou em {tentativas} tentativas.");
-                }
-                else
-                {
-                    Console.WriteLine("Palpite errado. Tente novamente.");
-
-                    // Adicione dicas aqui, por exemplo:
-                    if (palpite < numeroAleatorio)
-                        Console.WriteLine("Tente um número maior.");
-                    else
-                        Console.WriteLine("Tente um número menor.");
-                }
-            }
-            catch (FormatException)
-            {
-                Console.WriteLine("Entrada inválida. Digite um número válido.");
-            }
-
-        } while (!acertou);
-
-        Console.WriteLine("Seus palpites:");
-
-        for (int i = 0; i < tentativas; i++)
-        {
-            Console.Write($"{palpites[i]} ");
-        }
-
-        Console.Write("\nDeseja jogar novamente? (S/N): ");
-        string jogarNovamenteStr = Console.ReadLine();
-
-        if (jogarNovamenteStr.ToUpper() == "N")
-        {
-            Console.WriteLine("Obrigado por jogar!");
-            Environment.Exit(0);
-        }
     }
 }
